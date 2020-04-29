@@ -1,0 +1,47 @@
+@mixin text($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh-d;
+}
+
+@mixin btn( $color, $bg-color, $fs, $fw, $pd-bt, $pd-lr, $hover-color, $hover-bg-color) {
+    color: $color;
+    background-color: $bg-color;
+    font-size: $fs;
+    font-weight: $fw;
+    padding: $pd-bt $pd-lr;
+    &:hover {
+        color: $hover-color;
+        background-color: $hover-bg-color;
+        border: none;
+    }
+}
+
+@mixin MediaQuery($type) {
+    @if $type==$xs {
+        @media screen and (max-width: $xs) {
+            @content;
+        }
+    }
+    @else if $type==$sm {
+        @media screen and (max-width: $sm) {
+            @content;
+        }
+    }
+    @else if $type==$md {
+        @media screen and (max-width: $md) {
+            @content;
+        }
+    }
+    @else if $type==$lg {
+        @media screen and (max-width: $lg) {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (max-width: $xl) {
+            @content;
+        }
+    }
+}

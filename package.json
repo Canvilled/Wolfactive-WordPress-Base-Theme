@@ -1,0 +1,33 @@
+{
+  "name": "base-theme",
+  "description": "This is base theme",
+  "scripts": {
+    "compile-styles": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 assets/css/core/main.scss assets/css/globals.css",
+    "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output assets/css/globals.min.css assets/css/globals.css",
+    "process-styles": "npm run compile-styles && npm run css-minify",
+    "complie-script": "uglify-merge -s assets/js/core -o ../../js/main.min.js",
+    "build": "cross-env AUTOPREFIXER_GRID=autoplace && npm run process-styles && npm run complie-script"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 ie version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "clean-css-cli": "^4.3.0",
+    "cross-env": "^7.0.2",
+    "node-sass": "^4.14.0"
+  },
+  "dependencies": {
+    "uglify-merge-js": "0.0.7"
+  }
+}
