@@ -25,7 +25,7 @@
     "autoprefixer": "^9.7.6",
     "clean-css-cli": "^4.3.0",
     "cross-env": "^7.0.2",
-    "node-sass": "^4.14.0"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "uglify-merge-js": "0.0.7"
